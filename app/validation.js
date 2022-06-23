@@ -18,6 +18,8 @@ function isGuessValid(guess) {
     document.body.innerHTML = `
         <h2>That's it!</h2>
         <h3>The secret number was ${secretNumber}</h3>
+
+        <button id="play-again" class="btn-play-again">Play again</button>
     `;
   } else if (number > secretNumber) {
     guessElement.innerHTML +=
@@ -27,3 +29,9 @@ function isGuessValid(guess) {
       '<div>The secret number is bigger <i class="fa-solid fa-up-long"></i></div>';
   }
 }
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.id === 'play-again') {
+    window.location.reload();
+  }
+});

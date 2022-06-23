@@ -18,3 +18,5 @@ function showGuess(guess) {
   guessElement.innerHTML = `<div>You said</div>
                             <span class="box">${guess}</span>`;
 }
+
+recognition.addEventListener('end', () => recognition.start());
