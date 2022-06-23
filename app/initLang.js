@@ -1,7 +1,13 @@
-let lang = localStorage.getItem('lang') || localStorage.setItem('lang', lang);
+let lang = 'en-US';
+const minValue = localStorage.getItem('minValue') || 1;
+localStorage.setItem('minValue', minValue);
+const maxValue = localStorage.getItem('maxValue') || 100;
+localStorage.setItem('maxValue', maxValue);
+if (localStorage.getItem('lang')) {
+  lang = localStorage.getItem('lang');
+}
+
 console.log('Language: ', lang);
-const minValue = 1;
-const maxValue = 100;
 
 const titleBig = document.querySelector('h1');
 const description = document.querySelector('h3');

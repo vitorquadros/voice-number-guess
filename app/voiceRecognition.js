@@ -1,9 +1,11 @@
+const language = localStorage.getItem('lang');
+
 const guessElement = document.querySelector('#guess');
 
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition();
-recognition.lang = lang === 'en-US' ? 'en-US' : 'pt-BR';
+recognition.lang = language === 'en-US' ? 'en-US' : 'pt-BR';
 recognition.start();
 
 recognition.addEventListener('result', onSpeak);
@@ -16,7 +18,7 @@ function onSpeak(event) {
 
 function showGuess(guess) {
   guessElement.innerHTML =
-    lang === 'en-US'
+    language === 'en-US'
       ? `<div>You said</div>
                             <span class="box">${guess}</span>`
       : `<div>Você falou</div>
