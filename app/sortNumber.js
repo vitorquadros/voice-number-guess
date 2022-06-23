@@ -6,6 +6,7 @@ function getSecretNumber() {
 }
 
 const secretNumber = getSecretNumber();
+console.log('The secret number is: ', secretNumber);
 
 const minValueElement = document.querySelector('#min-value');
 const maxValueElement = document.querySelector('#max-value');
